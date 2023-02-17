@@ -1,0 +1,56 @@
+{
+	"contracts": {
+		"NonFungibleToken": {
+			"source": "./cadence/contracts/NonFungibleToken.cdc",
+			"aliases": {
+				"testnet": "0x631e88ae7f1d7c20",
+				"mainnet": "0x1d7e57aa55817448"
+			}
+		},
+		"MetadataViews": {
+			"source": "./cadence/contracts/MetadataViews.cdc",
+			"aliases": {
+				"testnet": "0x631e88ae7f1d7c20",
+				"mainnet": "0x1d7e57aa55817448"
+			}
+		},
+		"FungibleToken": {
+			"source": "./cadence/contracts/FungibleToken.cdc",
+			"aliases": {
+				"emulator": "0xee82856bf20e2aa6",
+				"testnet": "0x9a0766d93b6608b7",
+				"mainnet": "0xf233dcee88fe0abe"
+			}
+		},
+		"MyFunNFT": "./cadence/contracts/MyFunNFT.cdc"
+	},
+	"networks": {
+		"emulator": "127.0.0.1:3569",
+		"mainnet": "access.mainnet.nodes.onflow.org:9000",
+		"testnet": "access.devnet.nodes.onflow.org:9000"
+	},
+	"accounts": {
+		"emulator-account": {
+			"address": "f8d6e0586b0a20c7",
+			"key": "6d12eebfef9866c9b6fa92b97c6e705c26a1785b1e7944da701fc545a51d4673"
+		},
+		"testnet-account": {
+			"address": "0x503b9841a6e501eb",
+			"key": "$MYFUNNFT_TESTNET_PRIVATEKEY"
+		}
+	},
+	"deployments": {
+        "emulator": {
+            "emulator-account": [
+                "NonFungibleToken",
+                "MetadataViews",
+                "MyFunNFT"
+            ]
+        },
+        "testnet": {
+            "testnet-account": [
+                "MyFunNFT"
+            ]
+        }
+    }
+}
